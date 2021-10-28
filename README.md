@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# yarn2 with CRA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## `Create project`
 
-## Available Scripts
+npx create-react-app yarn2-cra-example --template typescript
 
-In the project directory, you can run:
+## `Setting yarn2`
 
-### `yarn start`
+yarn set version berry
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## `Setting typescript plugin`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+yarn plugin import typescript
 
-### `yarn test`
+## `Edit .yarnrc.yml`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+yarn install 이후
+.yarnrc.yml 파일을 열어 `nodeLinker: node-modules` 제거
 
-### `yarn build`
+## `Delete node_modules`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+rm -rf node_modules
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## `Install dependency`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+yarn install
 
-### `yarn eject`
+## `Start project`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+yarn run start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## `Setting eslint & prettier`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+yarn add -D eslint-config-airbnb eslint-config-airbnb-typescript eslint-config-prettier eslint-config-react-app eslint-import-resolver-typescript eslint-loader eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-import-resolver-node @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier prettier-eslint prettier-eslint-cli eslint-plugin-prettier
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## `Intellij restart`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Intellij를 재시작합니다
